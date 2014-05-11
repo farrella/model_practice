@@ -21,7 +21,7 @@ class QuestionsController < ApplicationController
   def question_3
     # Which director has the most movies on the list?
 
-    # @director_with_the_most_movies = Director.where(Movie.count).max
+    # wrong - returns last director from list of movies: @director_with_the_most_movies = Director.where(Movie.count).max
 
      the_leader = Director.new
   
