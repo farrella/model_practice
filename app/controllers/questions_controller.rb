@@ -20,7 +20,6 @@ class QuestionsController < ApplicationController
 
     @most_recent_movie_for_second_actor = most_recent_movie[:title]
 
-
   end
 
   def question_2
@@ -28,7 +27,10 @@ class QuestionsController < ApplicationController
 
     # Your Ruby goes here.
 
-    # @director_of_longest_movie = ???
+
+    @director_of_longest_movie = Movie.order("duration DESC").first.director.name
+
+  
   end
 
   def question_3
