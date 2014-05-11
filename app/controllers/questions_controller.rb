@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   def question_1
     # What is the most recent movie on the list that the second actor appeared in?
 
-    @most_recent_movie_for_second_actor = Actor.find(2).movies.order("year DESC").first.title
+    @most_recent_movie_for_second_actor = Actor.second.movies.order("year DESC").first.title
 
   end
 
@@ -21,10 +21,19 @@ class QuestionsController < ApplicationController
   def question_3
     # Which director has the most movies on the list?
 
-    # Your Ruby goes here.
+    @director_with_the_most_movies = Director.where(Movie.count).max
 
-    # @director_with_the_most_movies = ???
+    #  the_leader = Director.new
+  
+    #   Director.all.each do |the_director|
+    #     if the_director.movies.count > the_leader.movies.count
+    #       the_leader = the_director
+    #    end
+    # end
+  
+    #  @director_with_the_most_movies = the_leader
   end
+
 
   def question_4
     # Which actor has been in the most movies on the list?
